@@ -117,8 +117,8 @@ const BitmapEngine DECORATE(bitmap_engine) = {
     .mul_bitmaps = ass_mul_bitmaps_c,
 #endif
 
-#ifdef __x86_64__
-    .be_blur = DECORATE(be_blur),
+#if defined(__x86_64__) && (ENGINE_FLAGS & ASS_CPU_FLAG_X86_SSE2)
+    .be_blur = DECORATE_SUFFIX(be_blur, sse2),
 #else
     .be_blur = ass_be_blur_c,
 #endif
