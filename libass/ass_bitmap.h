@@ -24,6 +24,7 @@
 #include FT_GLYPH_H
 
 #include "ass.h"
+#include "ass_cpu.h"
 #include "ass_outline.h"
 
 
@@ -60,6 +61,7 @@ typedef void (*ParamFilterFunc)(int16_t *dst, const int16_t *src,
 #define C_ALIGN_ORDER 5
 
 typedef struct {
+    ASS_CPUFlags cpu_flags;
     int align_order;  // log2(alignment)
 
     // rasterizer functions
