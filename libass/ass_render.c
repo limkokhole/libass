@@ -1912,7 +1912,7 @@ static bool parse_events(ASS_Renderer *render_priv, ASS_Event *event)
 {
     TextInfo *text_info = &render_priv->text_info;
 
-    char *p = event->Text, *q;
+    const char *p = event->Text, *q;
     char *drawing_text;
 
     // Event parsing.
